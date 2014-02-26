@@ -1,0 +1,10 @@
+Focused Web Crawler by Srujan Saggam and Anshul Mehra
+
+The crawler takes the query and number of result pages as command arguments. It then queries the google search engine for the top 10 results. The top 10 results are added to the priority queue (urls) with priority 1, which is the highest priority. It then fetches url from this queue opens it and extracts all the links from the page. and for each link it reads the contents of the url, it then tokenizes and the tokens generated are passed to a stemmer. based on the stemmed tokens it searches the query tokes(query is also tokenized and stemmed) and the priority is calculated and these are inturn put into the urls priority queue (note : if the page tokens doesnt contain any of the search tokes the url is not added to the urls queue). This process is repeated till the number of visited urls is equal to the number provided by the user via command line arguments.
+
+How priority is calculated?
+We have calculated the priority in a primitive fashion based on the stemmed tokens generated for the document and the query.
+Priority score = (no.of query tokens +1) - no.of query tokens found in the document.
+
+
+
